@@ -1,6 +1,6 @@
 import * as Mongo from "./mongo.ts";
 
-let m = Mongo.getExecutables();
+const m = await Mongo.getExecutables();
 
 function handleRequest() {
       // Use stringify function to convert javascript object to JSON string.
