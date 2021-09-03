@@ -1,10 +1,12 @@
 import { MongoProject, MongoDenoExecutable, MongoDenoModule } from "https://www.roeh.ch/x/roehMongo";
 
-function handleRequest(request) {
+let m = MongoDenoExecutable.find();
+
+function handleRequest() {
       // Use stringify function to convert javascript object to JSON string.
 
       const json = JSON.stringify({
-        message: MongoDenoExecutable.find(),
+        message: m,
       });
   
       return new Response(json, {
