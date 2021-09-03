@@ -1,6 +1,6 @@
-import { MongoProject, MongoDenoExecutable, MongoDenoModule } from "https://www.roeh.ch/x/roehMongo";
+import * as Mongo from "./mongo.ts";
 
-let m = MongoDenoExecutable.find();
+let m = Mongo.getExecutables();
 
 function handleRequest() {
       // Use stringify function to convert javascript object to JSON string.
