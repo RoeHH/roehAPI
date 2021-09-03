@@ -1,12 +1,14 @@
-import * as Mongo from "./mongo.ts";
+import { MongoDenoExecutable } from "https://gitlab.wuersch.org/iccee0/roeh-cli/-/raw/master/mongo.ts";
 
-const m = await Mongo.getExecutables();
+const arr = await MongoDenoExecutable.find(undefined, {
+    noCursorTimeout: false,
+  }).toArray();
 
 function handleRequest() {
       // Use stringify function to convert javascript object to JSON string.
 
       const json = JSON.stringify({
-        message: m,
+        message: arr,
       });
   
       return new Response(json, {
