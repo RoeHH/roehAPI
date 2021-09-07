@@ -2,7 +2,7 @@ import { getExecutable } from "./mongo.ts";
 
 async function handleRequest() {
   const denoExecutabel = await getExecutable();
-  const json = JSON.stringify(denoExecutabel);
+  const json = "hallo"//JSON.stringify(denoExecutabel);
 
   return new Response(json, {
     headers: {
@@ -12,5 +12,5 @@ async function handleRequest() {
 }
 
 addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest());
 });
