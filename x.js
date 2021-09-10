@@ -1,23 +1,18 @@
-import { MongoDenoExecutable } from "https://gitlab.wuersch.org/iccee0/roeh-cli/-/raw/master/mongo.ts";
+import { getExecutable } from "./mongo.ts";
 
-const arr = await MongoDenoExecutable.find(undefined, {
-    noCursorTimeout: false,
-  }).toArray();
+async function handleRequest() {
+  const msg = await getExecutable();
+  const json = JSON.stringify({
+    message: msg,
+  });
 
-function handleRequest() {
-      // Use stringify function to convert javascript object to JSON string.
+  return new Response(json, {
+    headers: {
+      "content-type": "application/json; charset=UTF-8",
+    },
+  });
+}
 
-      const json = JSON.stringify({
-        message: arr,
-      });
-  
-      return new Response(json, {
-        headers: {
-          "content-type": "application/json; charset=UTF-8",
-        },
-      });
-    }
-  
 addEventListener("fetch", (event) => {
-    event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest(event.request));
 });
