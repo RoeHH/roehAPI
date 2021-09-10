@@ -3,7 +3,7 @@ import { getExecutable } from "./mongo.ts";
 async function handleRequest() {
   const msg = await getExecutable();
   const json = JSON.stringify({
-    message: msg,
+    message: msg.toString(),
   });
 
   return new Response(json, {
