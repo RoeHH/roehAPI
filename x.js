@@ -4,9 +4,9 @@ addEventListener("fetch", (event) => {
   });
   event.respondWith(response);
 });
-/*
-import { getExecutable } from "./mongo.ts";
 
+import { getExecutable } from "./mongo.ts";
+/*
 async function handleRequest() {
   //const denoExecutabel = await getExecutable();
   const json = "hallo"//JSON.stringify(denoExecutabel);
