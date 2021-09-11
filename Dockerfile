@@ -1,30 +1,15 @@
-FROM frolvlad/alpine-glibc:alpine-3.11_glibc-2.31
+FROM hayd/alpine-deno:1.5.2
 
-ENV DENO_VERSION=1.1.1
+EXPOSE 8080  
 
-RUN apk add --virtual .download --no-cache curl \
-    && curl -fsSL https://github.com/denoland/deno/releases/download/v${DENO_VERSION}/deno-x86_64-unknown-linux-gnu.zip \
-    --output deno.zip \
-    && unzip deno.zip \
-    && rm deno.zip \
-    && chmod 777 deno \
-    && mv deno /bin/deno \
-    && apk del .download
+WORKDIR /app
 
-RUN addgroup -g 1993 -S deno \
-    && adduser -u 1993 -S deno -G deno \
-    && mkdir /deno-dir/ \
-    && chown deno:deno /deno-dir/
+# Prefer not to run as root.
+USER deno
 
-ENV DENO_DIR /deno-dir/
-ENV APP_DIR /app
+# These steps will be re-run upon each file change in your working directory:
+ADD . .
+# Compile the main app so that it doesn't need to be compiled each startup/entry.
+RUN deno cache src/app.ts
 
-WORKDIR ${APP_DIR}
-COPY src .
-RUN deno install --unstable --allow-plugin app.ts
-
-ENTRYPOINT ["deno"]
-
-EXPOSE 8080
-
-CMD ["run", "--allow-net", "--allow-plugin", "--unstable", "--allow-read", "--allow-write", "--allow-env", "app.ts"]
+CMD ["run", "--allow-env", "--allow-net", "--allow-read", "-r", "./src/app.ts"]

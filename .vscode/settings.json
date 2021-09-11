@@ -10,6 +10,7 @@
         "https://roeh.wuersch.org": false,
         "https://roeh.c.org": false,
         "https://www.roeh.ch.org": false,
-        "https://www.roeh.ch": false
+        "https://www.roeh.ch": false,
+        "https://deno.land": true
     }
 }
