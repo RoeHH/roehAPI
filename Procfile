@@ -1,1 +1,1 @@
-worker: docker build -t app . && docker run -it --init -p 8080:8080 app
+web: run --allow-env --allow-net:$PORT --allow-read -r ./src/app.ts
