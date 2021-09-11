@@ -3,6 +3,13 @@
     "deno.lint": true,
     "deno.unstable": true,
     "deno.suggest.imports.hosts": {
-        "https://gitlab.wuersch.org": false
+        "https://gitlab.wuersch.org": false,
+        "https://r.wuersch.org": false,
+        "https://ro.wuersch.org": false,
+        "https://roe.wuersch.org": false,
+        "https://roeh.wuersch.org": false,
+        "https://roeh.c.org": false,
+        "https://www.roeh.ch.org": false,
+        "https://www.roeh.ch": false
     }
 }

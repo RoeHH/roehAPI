@@ -1,7 +1,7 @@
 import { getExecutable } from "./mongo.ts";
 
 async function handleRequest() {
-  const denoExecutabel = await getExecutable();
+  //const denoExecutabel = await getExecutable();
   const json = "hallo"//JSON.stringify(denoExecutabel);
 
   return new Response(json, {
