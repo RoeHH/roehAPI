@@ -1,3 +1,10 @@
+addEventListener("fetch", (event) => {
+  const response = new Response("Hello World!", {
+    headers: { "content-type": "text/plain" },
+  });
+  event.respondWith(response);
+});
+/*
 import { getExecutable } from "./mongo.ts";
 
 async function handleRequest() {
@@ -14,3 +21,4 @@ async function handleRequest() {
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest());
 });
+*/
