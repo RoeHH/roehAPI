@@ -1,1 +1,1 @@
-web: run --allow-env --allow-net:$PORT --allow-read -r ./src/app.ts
+web: run --allow-env --allow-net:$PORT --allow-read -r ./src/app.ts --port=$PORT
