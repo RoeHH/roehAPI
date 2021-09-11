@@ -1,0 +1,1 @@
+worker: docker build -t app . && docker run -it --init -p 8080:8080 app
