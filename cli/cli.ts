@@ -17,26 +17,28 @@ switch (endpoint) {
   case "exe":
     res = await fetch("https://www.roeh.ch/roehapi/executable");
     break;
-  case "":
-    "findExe";
-    res = await fetch(`https://www.roeh.ch/roehapi/executable/${args[0]}`);
+  case "findExe":
+    res = await fetch(`https://secret-ocean-93187.herokuapp.com/executable/${args[0]}`);
     break;
   case "getModules()":
     res = await fetch("https://www.roeh.ch/roehapi/module");
     break;
   case "findModule":
-    res = await fetch(`https://www.roeh.ch/roehapi/module/${args[0]}`);
+    res = await fetch(`https://secret-ocean-93187.herokuapp.com/module/${args[0]}`);
     break;
   case "projects":
     res = await fetch("https://www.roeh.ch/roehapi/project");
     break;
   case "project":
-    res = await fetch(`https://www.roeh.ch/roehapi/project/${args[0]}`);
+    res = await fetch(`https://secret-ocean-93187.herokuapp.com/project/${args[0]}`);
     break;
-  case " getNumber":
+  case "number":
     res = await fetch(`https://www.roeh.ch/roehapi/number/`);
     break;
   default:
-        res = "Not Found";
+    logger.error("Not Found");
+    Deno.exit();
     break;
 }
+const returnString = JSON.parse(await res.text());
+console.log(returnString);

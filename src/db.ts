@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 import { MongoProject, MongoDenoModule,MongoDenoExecutable } from "https://www.roeh.ch/x/roehMongo.ts";
 
 export async function getExecutablesFromDB() {
