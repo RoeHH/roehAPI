@@ -1,18 +1,17 @@
 ---
-appName: roehApi
-description: A deno command to commit roeh.yml files to MongoDB.
-roehDescription: Erstelt um einfacher inhalt für roeh.ch zu erfassen. Und um deno Module an einem Ort verwalten zu können. Löst die Lösung mit den Markdown dataein ab.
+appName: roeh-Api
+description: A API to get rid of credentials in the runroeh command
+roehDescription: ABC 🔥🔥
 cloneUrl: https://github.com/RoeHH/roehAPI.git
 productiveUrl: https://secret-ocean-93187.herokuapp.com/
 buildDate: September 21
 number: 14
 denoExecutables:
-  -   executableName: commitroehyml
-      description:  A deno command to commit roeh.yml files to MongoDB. And redeploy roeh.ch
-      runUrl: https://gitlab.wuersch.org/iccee0/roeh-cli/-/raw/master/cli/cli.ts
+  -   executableName: roeh-API
+      description:  API to get stuf from roehDB lul
+      runUrl: https://github.com/RoeHH/roehAPI/blob/master/src/app.ts
       requiredFlags: --allow-env --allow-net --allow-read
-denoModules:
-  -   moduleName: build
-      description: Build and Deploy roeh.ch
-      importUrl: https://gitlab.wuersch.org/iccee0/roeh-cli/-/raw/master/buildsite/build.ts
-      requiredFlags: --allow-env --allow-net 
+  -   executableName: roehApiCli
+      description:  CLI to call the roeh API
+      runUrl: https://github.com/RoeHH/roehAPI/blob/master/cli/cli.ts
+      requiredFlags: --allow-net=www.roeh.ch,secret-ocean-93187.herokuapp.com
