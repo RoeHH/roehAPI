@@ -39,4 +39,5 @@ app
     }
     return number + 1;
   })
+  .get("/mongoClusterNumber",() => 1)
   .start({ port: PORT });
