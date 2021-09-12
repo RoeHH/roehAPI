@@ -37,6 +37,7 @@ switch (endpoint) {
     res = await fetch(`https://www.roeh.ch/roehapi/number/`);
     break;
   default:
-    res = "Not Found";
+        res = "Not Found";
+        
     break;
 }
