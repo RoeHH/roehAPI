@@ -23,12 +23,20 @@ app
   .get("/module/:moduleName", (c) => {
     const { moduleName } = c.params;
     console.log(moduleName);
-
     return DB.getModuleFromDB(moduleName);
   })
   .get("/project", () => DB.getProjectsFromDB())
   .get("/project/:appName", (c) => {
     const { appName } = c.params;
     return DB.getProjectFromDB(appName);
+  })
+  .get("/number", async () => {
+    let number = 0;
+    for (const project of await DB.getProjectsFromDB()) {
+      if (project.number > number) {
+        number = project.number;
+      }
+    }
+    return number + 1;
   })
   .start({ port: PORT });
