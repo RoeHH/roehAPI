@@ -38,6 +38,5 @@ switch (endpoint) {
     break;
   default:
         res = "Not Found";
-        
     break;
 }
