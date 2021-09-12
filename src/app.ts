@@ -7,8 +7,10 @@ const app = new Application();
 const { args } = Deno;
 const DEFAULT_PORT = 8080;
 const argPort = parse(args).port;
-
 const PORT = argPort ? Number(argPort) : DEFAULT_PORT;
+
+console.log(PORT);
+
 
 console.log(`Listening on Port: ${PORT}`);
 console.log(`http://localhost:${PORT}/`);
