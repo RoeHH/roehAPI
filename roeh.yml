@@ -1,11 +1,11 @@
 ---
-appName: roeh-x-cli
+appName: roehApi
 description: A deno command to commit roeh.yml files to MongoDB.
 roehDescription: Erstelt um einfacher inhalt für roeh.ch zu erfassen. Und um deno Module an einem Ort verwalten zu können. Löst die Lösung mit den Markdown dataein ab.
-cloneUrl: https://gitlab.wuersch.org/iccee0/roeh-cli.git
-productiveUrl: 
-buildDate: Mai Juni 21
-number: 13
+cloneUrl: https://github.com/RoeHH/roehAPI.git
+productiveUrl: https://secret-ocean-93187.herokuapp.com/
+buildDate: September 21
+number: 14
 denoExecutables:
   -   executableName: commitroehyml
       description:  A deno command to commit roeh.yml files to MongoDB. And redeploy roeh.ch

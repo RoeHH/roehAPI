@@ -16,6 +16,11 @@ console.log(`Listening on Port: ${PORT}`);
 console.log(`http://localhost:${PORT}/`);
 
 app
+  .get(
+    "/",
+    () =>
+      "https://secret-ocean-93187.herokuapp.com/executable\nhttps://secret-ocean-93187.herokuapp.com/project\nhttps://secret-ocean-93187.herokuapp.com/module\nhttps://secret-ocean-93187.herokuapp.com/number"
+  )
   .get("/executable", () => DB.getExecutablesFromDB())
   .get("/executable/:executableName", (c) => {
     const { executableName } = c.params;
