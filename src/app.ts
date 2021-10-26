@@ -1,6 +1,7 @@
 import { parse } from "https://deno.land/std@0.100.0/flags/mod.ts";
 import { Application } from "https://deno.land/x/abc@v1.3.1/mod.ts";
 import * as DB from "./db.ts";
+import { testWodbeOrderCreate } from "../sandbox/wordbeetest.ts";
 
 const app = new Application();
 
@@ -46,4 +47,5 @@ app
     }
     return number + 1;
   })
+  .(^/wordbeetest/:apiKey",testWodbeOrderCreate(c))
   .start({ port: PORT });
