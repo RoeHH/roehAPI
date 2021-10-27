@@ -1,7 +1,7 @@
 const testInstanceWb = "https://rouven-hanggi.eu.wordbee-translator.com/";
 const accountId = "rouven-hanggi"
 
-export function testWodbeOrderCreate(c) {
+export function testWordbeOrderCreate(c) {
     const { apiKey } = c.params;
     /*const authToken = await fetch(`${testInstanceWb}/api/orders/create/`, {
         body: Json.parse({
