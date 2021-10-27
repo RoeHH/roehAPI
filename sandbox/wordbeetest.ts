@@ -13,6 +13,6 @@ export function testWodbeOrderCreate(c) {
         },
         method: "POST",
     }).then(res -> res.json());
-    return authToken;
+    return "Test";
     const randId: number = Math. 
 }
