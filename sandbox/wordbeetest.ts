@@ -3,7 +3,7 @@ const accountId = "rouven-hanggi"
 
 export function testWordbeOrderCreate(c) {
     const { apiKey } = c.params;
-    /*const authToken = await fetch(`${testInstanceWb}/api/orders/create/`, {
+    const authToken = await fetch(`${testInstanceWb}/api/orders/create/`, {
         body: Json.parse({
             accountid: `${accountid}`,
             key: `${apiKey}`,
@@ -12,7 +12,7 @@ export function testWordbeOrderCreate(c) {
             "Content-Type": "application/application/json",
         },
         method: "POST",
-    }).then(res -> res.json());*/
+    }).then(res -> res.json());
     return "Test";
     const randId: number = Math. 
 }
