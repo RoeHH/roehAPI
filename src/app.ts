@@ -47,5 +47,5 @@ app
     }
     return number + 1;
   })
-  .(^/wordbeetest/:apiKey",testWodbeOrderCreate(c))
+  .("/wordbeetest/:apiKey",testWodbeOrderCreate(c))
   .start({ port: PORT });
