@@ -14,5 +14,4 @@ export function testWordbeOrderCreate(c) {
         method: "POST",
     }).then(res -> res.json());
     return "Test";
-    const randId: number = Math. 
 }
